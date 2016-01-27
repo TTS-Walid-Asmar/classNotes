@@ -4,16 +4,16 @@
 - Last week we talked about arrays and objects, which hold structured data.
 - What can we do with that data? This is where functions come in.
 - Today we'll talk about functions, parameters, scope, closures
-- JavaScript is a functional language, so it's all about the functions! 
+- JavaScript is a functional language, so it's all about the functions!
 - Functions usually people new to JavaScript, because they work differently than in other languages like Ruby, Java or C#.
 
 ## Function Basics
-- Functions are procedures that take arguments and return values. 
+- Functions are procedures that take arguments and return values.
 - Think about them like a sheet of paper with instructions on it.
 
 ### Define a function
 
-- A function has a name, an argument list, and a body. 
+- A function has a name, an argument list, and a body.
 - Arguments can be named anything you want
 
 ```javascript
@@ -33,7 +33,7 @@ saySomething('Hello function!'); //logs 'hello function!'
 ### Return values
 
 Functions can 'return' a value. A function evaluates to its `return` value when run.<br>
-*(note to Ruby Developers: Ruby _implicitly_ returns values. JS requires an _explicit_ return statement if you are expecting a return value)* 
+*(note to Ruby Developers: Ruby _implicitly_ returns values. JS requires an _explicit_ return statement if you are expecting a return value)*
 
 
 ##### Wrong
@@ -68,7 +68,7 @@ function add(a,b) {
 
 add(1); // '1,undefined'
 add(1,2,3,4,5) // '1,2'
-``` 
+```
 
 The arguments list simply creates variables that reference the arguments in order they were passed. For functions that take an unknown number of arguments, use the `arguments` object.
 
@@ -80,7 +80,7 @@ function add() {
 	}
 	return sum;
 }
-	
+
 add(1,2,3,4,5,6,7,8);
 ```
 
@@ -90,7 +90,7 @@ Calculating gratutity is a repetitive task, so let's create a couple of function
 
 - create a variable titled `billAmount` and store a random number (ie: 100)
 - create a function titled `gratuity()`
-	- gratutity should: 
+	- gratutity should:
 		- multiply the value of billAmount by 20% <br> *hint: use 0.2*
 		- return the value
 - create a function titled `totalWithGrat()`
@@ -99,9 +99,9 @@ Calculating gratutity is a repetitive task, so let's create a couple of function
 		- call the gratutity function
 		- add that to the original bill amount
 		- return the total bill + gratuity
-- log the total (with gratuity) to the console 
-	- append new total to the following phrase: 
-		- "your total including gratuity is:" 
+- log the total (with gratuity) to the console
+	- append new total to the following phrase:
+		- "your total including gratuity is:"
 - **Limitation: You can only invoke the totalWithGrat function when logging the result**
 
 **Mariel's Bonus Question**
@@ -115,7 +115,7 @@ Calculating gratutity is a repetitive task, so let's create a couple of function
 var billAmount = 100.58;
 
 function gratutity(){
-    return billAmount * 0.2;  
+    return billAmount * 0.2;
   }
 
 function totalWithGrat(amount){
@@ -128,10 +128,10 @@ console.log("your total, including gratutity is: $" +  totalWithGrat(billAmount)
 ## Functions as Objects
 
 - Functions are first class Objects in JavaScript.
-- This means they can be: 
+- This means they can be:
 	- instantiated
 	- assigned
-	- reassigned 
+	- reassigned
 	- and passed around just like any other variable.
 - Again, think of them as a physical piece of paper.
 
@@ -181,7 +181,7 @@ var calculator = {
 calculator.add(2,3) // 5
 ```
 
-So, what is the point of an Anonymous function? 
+So, what is the point of an Anonymous function?
 
 - Cleaner code
 - Scope management, used to create private scope (more on that later)
@@ -212,10 +212,10 @@ console.log(arrayOfMystery[2]()) // anonymous function!
 Let's revisit Rock Paper Scissors...
 
 1. Define a `hands` array with the values 'rock', 'paper', and 'scissors';
-2. Define a function called `getHand()` that returns a hand from the array using `parseInt(Math.random()*10)%3` 
+2. Define a function called `getHand()` that returns a hand from the array using `parseInt(Math.random()*10)%3`
 4. Define two objects for two players. Each player has `name` and `getHand()` properties.
-5. Define a function called `playRound()` that 
- 	- Takes two player objects as arguments 
+5. Define a function called `playRound()` that
+ 	- Takes two player objects as arguments
  	- Gets hands from each
  	- Determines the winner
  	- Logs the hands played and name of the winner.
@@ -242,7 +242,7 @@ Let's revisit Rock Paper Scissors...
 ```
 
 ## Scope
-- Scope is the set of variables a piece of code has access to. 
+- Scope is the set of variables a piece of code has access to.
 - Functions create a scope, nothing else.
 - Parameters and variables declared inside a function are LOCAL to that function's scope
 
@@ -286,7 +286,7 @@ Sometimes you want to create a scope so that you can have private variables. One
 
 (function(){
 	var myVar = "look mom, private variables!";
-	
+
 	//Do some stuff with myVar...
 })();
 
@@ -295,9 +295,11 @@ console.log(myVar); //undefined;
 ```
 
 ## Scope Chain and Closures
-- When a scope is created, it is nested inside another scope. 
-- To resolve a variable, JS looks at the immediate scope, then parent scopes in order. 
+- When a scope is created, it is nested inside another scope.
+- To resolve a variable, JS looks at the immediate scope, then parent scopes in order.
 - A **closure** is an inner function that has access to the outer function’s variables. Both scopes together are the **scope chain**.
+
+![](images/Inception-Turning-the-City-2.gif)
 
 For example, the `city` variable is visible inside the `greet` function because the greet function creates a closure.
 
@@ -309,7 +311,7 @@ var greet = function() {
 
 greet(); // Hello Charlotte
 ```
-Accessing `city` inside the greet function will first look for a variable named `city` in the greet function, then to the parent scope, and so on up the scope chain. 
+Accessing `city` inside the greet function will first look for a variable named `city` in the greet function, then to the parent scope, and so on up the scope chain.
 
 ##### Nested scope Example 1
 
@@ -329,19 +331,19 @@ function outer() {
 ```javascript
 var landscape = function() {
     var result = "";
-    
+
     var flat = function(size) {
         for (var count = 0; count < size; count++)
             result += " _ ";
     };
-    
+
     var mountain = function(size) {
         result += "/";
         for (var count = 0; count < size; count++)
             result += " '";
         result += "\\";
     };
-    
+
     flat(3);
     mountain(4);
     flat(6);
@@ -369,7 +371,7 @@ console.log(name); // Shane
 console.log(greet(name)); // Matt
 ```
 
-Declaring the variable `name` in the inner scope hides the variable with the same name in the outer scope. This is a new variable, so assigning to the inner variable won't affect the outer. 
+Declaring the variable `name` in the inner scope hides the variable with the same name in the outer scope. This is a new variable, so assigning to the inner variable won't affect the outer.
 
 Sometimes a function defines argument names with the same name as variables in the parent scope. This works the same way as the example above.
 
@@ -380,7 +382,7 @@ var greet = function(name) {
 }
 greet('joe'); // 'joe'
 
-//equivalant to 
+//equivalant to
 
 var name = 'Shane';
 var greet = function(mySuperUniqueVariableName) {
@@ -398,9 +400,9 @@ Start with the following code template. After each step, run the program and see
 
 ```javascript
 function outer(){
-  
+
   function inner() {
-   
+
   }
 
   inner();
