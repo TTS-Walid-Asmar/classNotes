@@ -287,7 +287,7 @@ The only difference is that `.apply()` takes an array of arguments to pass to th
 
 Going back to our slideshow object, let's add some functionality.
 
-1. create an empty property named playInterval 
+1. create an empty property named `playInterval` 
 2. A `play()` function that moves to the next photo ever 2000ms until the end.<br> *Tip - use `playInterval = setInterval(fn,ms)`*.
 3. A `pause()` function that stops the slideshow <br> *Tip - use `clearInterval(playInterval)`*
 4. Automatically pause the slideshow if it gets to the end of the photolist while playing.
