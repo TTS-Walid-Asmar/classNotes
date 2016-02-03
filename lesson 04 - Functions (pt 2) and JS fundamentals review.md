@@ -1,5 +1,5 @@
 
-# Lesson 4 - Functions Continued && OOP
+# Lesson 4 - Functions Continued && JS Fundamentals Review
 
 ## Recap
 
