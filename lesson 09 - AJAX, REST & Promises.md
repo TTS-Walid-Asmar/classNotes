@@ -420,9 +420,10 @@ Even if a promise is resolved before a `.then()` is attached to it, the `then()`
 
 
 ## Exercises 2 & Homework: Promises
-Using the API at http://jsonplaceholder.typicode.com/ create an app with the following functionality. Use Promises for everything.
 
 - Complete the [promise it won't hurt](https://github.com/stevekane/promise-it-wont-hurt) nodeschool tutorial and send a screenshot to Shane
+
+- Using the API at http://jsonplaceholder.typicode.com/ create an app with the following functionality. Use Promises for everything.
 
 1. **Login page** - Display a login form asking user for a username.
 	- On Submit, look up the username entered by the user.
