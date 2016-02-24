@@ -355,7 +355,6 @@ Let's write some tests for our modules!
 - Update the `npm test` script to run your mocha tests
 - Create a test 'should return current time' and test the logger to make sure it returns the current time in the right format
 - Create a test 'should return a post' and test your dataModule's getPost method. Make sure your post has the properties you expect.
-- 
 
 ## Homework 
 
