@@ -1,4 +1,4 @@
-# Lesson 12 - Compilation
+# Lesson 11 - Compilation
 
 ## Recap & Intro
 - Last time we talked about
@@ -350,9 +350,9 @@ module.exports = {
 
 **output**
 
-- contains your output config. 
-- we provide *filename* as the **key** 
-- while the **value** is *bundle.js* 
+- contains your output config.
+- we provide *filename* as the **key**
+- while the **value** is *bundle.js*
 - this creates the name of the file that webpack will build for us
 
 
@@ -379,7 +379,7 @@ module.exports = {
 };
 ```
 
-Now you can simply run the command `$ webpack` to compile. Go ahead and give it a try to insure that everything is working properly 
+Now you can simply run the command `$ webpack` to compile. Go ahead and give it a try to insure that everything is working properly
 
 ## Transformations with Loaders
 Now that we have an application being built, let's look at some transformations we can apply during the build step.
@@ -388,21 +388,21 @@ Now that we have an application being built, let's look at some transformations 
 - Different loaders are applied to different files based on file type
 - Loaders are their own NPM packages that need to be installed and configured
 
-You'll remember that in our index.js file, we have the following require statement: `require("style!css!../css/app.css");` 
+You'll remember that in our index.js file, we have the following require statement: `require("style!css!../css/app.css");`
 
 We can shorten the require statement and move the loader into our webpack.config.js
 
-First, modify the existing require statement in your index.js: 
+First, modify the existing require statement in your index.js:
 
-```javascript 
-// remove 
+```javascript
+// remove
 require("style!css!../css/app.css");
 
 //add
 require("../css/app.css");
 ```
 
-Now, in your webpack config, add the following code after your `output` statement: 
+Now, in your webpack config, add the following code after your `output` statement:
 
 ```javascript
 module: {
@@ -415,7 +415,7 @@ module: {
 Now our style loader can be located in the webpack config. Which is much better.
 <center>![](images/high_five.gif)</center>
 
-Here's an example of a more complete webpack config with a couple of loaders: 
+Here's an example of a more complete webpack config with a couple of loaders:
 
 
 ```javascript
@@ -489,9 +489,9 @@ That's all the ES6 you get until next week.
 
 ## NPM Modules
 
-If you take a look at the Node Modules directory, you'll see all the modules installed on the project. 
+If you take a look at the Node Modules directory, you'll see all the modules installed on the project.
 
-With ES6 importing/exporting, we can import those now as well. 
+With ES6 importing/exporting, we can import those now as well.
 
 ```javascript
 // src/javascript/index.js
@@ -531,9 +531,9 @@ resolve: {
 	- create an array for the die with the numbers 1 - 6
 	- When the button is clicked
 		- use lodash to shuffle throught the die array and select a random number
-		- print that number to the screen 
+		- print that number to the screen
 		- ask the user if they'd like to play again
- 
+
 
 
 ## Exercise Answer
@@ -550,29 +550,29 @@ module.exports = $("#roll").on('click', function(){
   var outcome = _.shuffle(dice).pop();
   $("#score").html("<h1> "+ outcome +"</h1>");
   $(this).text('Roll Again?');
-  
+
 });
 ```
 
 ## Webpack Dev Server
 
-Webpack also offers the ability for us to create a server on our local machine 
+Webpack also offers the ability for us to create a server on our local machine
 
 First, install webpack-dev-server by running `npm install webpack-dev-server -g` <br>
 Then, run `webpack-dev-server` and navigate to [http://localhost:8080](http://localhost:8080)
 
-webpack-dev-server comes with a few really nice features that will be super usesful as we start developing with React. 
+webpack-dev-server comes with a few really nice features that will be super usesful as we start developing with React.
 
 ## ES Lint
 
 Linting is a huge time and life saver. In essence, a linter will run through your code and check for syntax errors.<br>
 Think of it as spell-check for your code
 
-With webpack, we can configure a number of ES Linters to watch our code and warn us of potential issues. 
+With webpack, we can configure a number of ES Linters to watch our code and warn us of potential issues.
 
-For now, we'll be using [eslint-loader](https://github.com/MoOx/eslint-loader). 
+For now, we'll be using [eslint-loader](https://github.com/MoOx/eslint-loader).
 
-To install, simply run `npm install eslint-loader` and add ` {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}` to the loaders section of your webpack config. 
+To install, simply run `npm install eslint-loader` and add ` {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}` to the loaders section of your webpack config.
 
 ### Exercise
 
