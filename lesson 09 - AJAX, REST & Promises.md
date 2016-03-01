@@ -1,4 +1,4 @@
-# Lesson 10 - REST APIs & Promises
+# Lesson 9 - REST APIs & Promises
 
 ## Recap & Intro
 - Last time we talked about jQuery and DOM manipulation
