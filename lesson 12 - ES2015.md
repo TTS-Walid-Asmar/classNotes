@@ -488,9 +488,9 @@ let student = {name: "Latori"};
 let status = new Map();
 
 status.set(name, "Latori");
-student.set("status", "awesome")
-console.log(student.get(name));
-console.log(student.get("status"))
+status.set("feeling", "awesome")
+console.log(status.get(name));
+console.log(status.get("feeling"))
 //Latori
 //awesome
 ```
@@ -1013,3 +1013,5 @@ As you can see, writing modular code is the future of JavaScript. The modular pa
 [For and Against Let](https://davidwalsh.name/for-and-against-let)
 
 [ES2015 Constants](https://mathiasbynens.be/notes/es6-const)
+
+[Map, Set, WeakMap, WeakSet](http://www.2ality.com/2015/01/es6-maps-sets.html)
