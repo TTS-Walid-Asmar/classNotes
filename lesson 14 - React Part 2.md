@@ -1,4 +1,4 @@
-# Lesson 15 - React Part 2
+# Lesson 14 - React Part 2
 
 ## Recap & Intro
 
@@ -19,7 +19,7 @@ class HelloMessage extends React.Component {
   		clickCount : 0
   	};
   }
-  
+
   _handleClick(event) {
   	console.log('clicked!', event)
   }
@@ -41,7 +41,7 @@ _handleClick(event) {
   	var clicks = this.state.clickCount;
   	this.setState({clickCount: clicks + 1})
  }
- 
+
 ```
 
 ## Forms and User Input
@@ -63,7 +63,7 @@ In order to let the user update its value, use the onChange event handler to upd
 _handleChange: function(event) {
 	this.setState({value: event.target.value});
 }
-  
+
 render() {
 	return (
 	  <input
@@ -104,7 +104,7 @@ render() {
 
 ## Exercise 1: Handling Events
 
-1. Wire up a click event handler to your button. 
+1. Wire up a click event handler to your button.
 2. Clicking the button takes the message from the text input and adds it to the message list.
 3. Clicking the button clears the message from the input box.
 4. If there is no text in the input box, the button should do nothing.
