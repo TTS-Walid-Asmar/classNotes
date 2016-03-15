@@ -1,4 +1,4 @@
-# Lesson 14 - React
+# Lesson 13 - React
 
 ## Recap & Intro
 - We've come a long way! We've learned
@@ -17,7 +17,7 @@
 - Simple, powerful, and composable
 
 ## What React Isn't
-- React is not a web framework (not tied to html/css). 
+- React is not a web framework (not tied to html/css).
 - React isn't a full fledged application framework
 - React is not Flux or Redux
 
@@ -73,7 +73,7 @@ Like we said before, JSX isn't really HTML. Because it lives in the same context
 - All tags have to be closed. `<input type="text">` for example, has to include a closing tag `<input type="text" />`.
 
 ## Exercise 1: Rendering a Simple Component
-Let's create our first component! 
+Let's create our first component!
 
 1. Clone the boilerplate project from `git@github.com:ttsJavaScriptApps/webpack-boilerplate.git`
 2. In index.jsx, create a component class called `MessageInput` that renders:
@@ -85,7 +85,7 @@ Let's create our first component!
 ## Making our JSX Dynamic
 Let's take a deeper look at the render method. This is essentially the equivalant of our view template in other frameworks (ejs, handlebars, mustache, jade, haml, etc.).
 
-The basic functionality needed in any templating language is 
+The basic functionality needed in any templating language is
 
 1. Token Replacement
 2. Conditions
@@ -103,7 +103,7 @@ class HelloMessage extends React.Component {
 
   constructor() {
     super(); //needed for inheritance
-    
+
     //Define an intial state object
     this.state = {
   		message : 'Hello World'
@@ -152,13 +152,13 @@ Often times we want to render one thing in one case, and something else in anoth
 // this.state = { person : 'Matt'};
 
 render() {
-	
+
 	//Figure out the elements in advance
 	if(this.state.person)
 		message = "Hello " + this.state.person;
 	else
 		message = "I'm all alone... and sad";
-	
+
 	return (
 		<div>{message}</div>
 	);
@@ -189,12 +189,12 @@ Sometimes you want to render the same elements repeatedly for every item in an a
 ```javascript
 //this.state = { studentNames: ['Matt', 'Katy', 'Mariel', 'Lee'] }
 
-render() {	
+render() {
 	//Figure out the elements in advance
 	var students = this.state.studentNames.map(function(name){
 		return (<li key="name">{name}</li>)
 	})
-	
+
 	return (
 		<ul>{students}</ul>
 	);
@@ -211,12 +211,12 @@ One of the most common dynamic elements is the list of classes an element has ap
 
 render() {
 	var classes = 'item'
-	
+
 	if(isActive) {
 		classes += 'active';
 	}
-	
-		
+
+
 	return (
 		<div className={classes}></div>
 	);
@@ -233,8 +233,8 @@ render() {
 	var classes = classNames({
 		'item' : true,
 		'active' : isActive
-	})	
-		
+	})
+
 	return (
 		<div className={classes}></div>
 	);
@@ -251,7 +251,7 @@ render() {
 		color: 'red',
 		textDecoration: 'underline'
 	}
-		
+
 	return (
 		<h1 style={headerStyle}></h1>
 	);
@@ -270,7 +270,7 @@ Let's add some logic to our little component.
 5. Only show the most recent 3 messages.
 6. If there are more than 3 messages, show a "load more" button
 
-## Homework 
+## Homework
 
 - Start Reading the [React Documentation](https://facebook.github.io/react/docs/getting-started.html)
 - Complete the first 3 challenges (stop at Step 2 - Part 3) of [Thinking in React](https://github.com/asbjornenge/thinking-in-react) module
