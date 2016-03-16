@@ -49,7 +49,7 @@ You are familiar with the instantiation of a component.
 ```javascript
 class HelloMessage extends React.Component {
 	constructor(){
-		super():
+		super();
 	}
 
 	render(){
