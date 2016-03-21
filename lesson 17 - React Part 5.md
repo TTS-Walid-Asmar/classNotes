@@ -164,7 +164,7 @@ let routes = (
 );			  
 ```
 
-With browserHistory implemented, your `<Router>` component knows which *history tracking* stragety to use, making the URL looks significantly better.
+With browserHistory implemented, your `<Router>` component knows which *history tracking* stragety to use, and makes the URL looks significantly better.
 
 
 ## Exercise and Homework
