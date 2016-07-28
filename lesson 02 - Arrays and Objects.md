@@ -58,7 +58,7 @@ teachers[4] = 'Cam Newton'; // ['Assaf', 'Shane', 'Zack', undefined, 'CamNewton'
 ```javascript
 var a = [10,11,20];
 a.indexOf(11); //1
-a.indexOf(50); //-1
+a.indexOf(50); //-1 this means it doesn't exist
 ```
 
 ### Slicing and Splicing
@@ -105,7 +105,7 @@ a.sort(); //[1,2,3]
 
 a.reverse(); //[3,2,1]
 
-//Alternatively a.sort(mySortFunction); 
+//Alternatively a.sort(mySortFunction);
 ```
 
 
@@ -124,26 +124,6 @@ You're going to the grocery store and decide to use an array to keep track of yo
 8. Write a 'while' loop that takes items from your shopping list and moves them to your cart until there are no items left on the list.
 9. Sort the items in your cart alphabetically... backwards
 10. Print the list of items in your shopping cart to the console as comma separated string.
-
-
-### Exercise 1 answer
-
-```javascript
-var list = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee'];
-list[4] = 'fair trade coffee';
-list.push('fruit loops');
-list.splice(2,2,'rice', 'beans');
-
-var cart = [];
-cart.push(list.pop());
-cart.push(list.shift());
-
-while(list.length > 0)
-    cart.push(list.pop());
-
-cart.sort().reverse();
-console.log("My cart contains: ", cart.join(',')); 
-```
 
 ## Objects
 
@@ -228,7 +208,7 @@ course.fun = true; //add a property
 delete course.name; //remove one
 ```
 
-## Exercise: Addressing Objects
+## Exercise 2: Addressing Objects
 
 Given the following object:
 
@@ -281,29 +261,7 @@ var course = {
 5. The preReq equipment object
 6. The second OSOption from equipment prereqs ('osx')
 7. string listing the OSOptions separated by 'or' ('linux or osx')
-8. An array of all the students that are using OSX.
 
-### Addressing Objects Answer
-
-1. course.name;
-2. course.teachers[1];
-3. course.students[0].name;
-4. course.students[1].computer.type;
-5. course.preReqs.equipment
-6. course.preReqs.equipment.OSOptions[1];
-7. course.preReqs.equipment.OSOptions.join(' or ');
-8. 
-
-```javascript
-var OSXStudents = [];
-for(var i = 0; i < course.students; i++) {
- if(course.students[i].computer.OS === 'OSX')
- 	OSXStudents.push(course.students[i]);
-}
-console.log(OSXStudents);
-```
-
- 
 
 ## JSON
 You've probably heard of JSON. It's a text based data format based on JavaScript object syntax. It's used to store data and exchange it between applications
@@ -323,14 +281,14 @@ An important difference between JavaScript objects and JSON is that proper JSON 
 ## Value vs Reference types
 In JavaScript, primative types like ints and strings are assigned by value. Objects and Arrays (which are also objects) are assigned by reference.  
 
-A *value* variable holds its value like you might expect. A *reference* variable points to an object in memory. 
+A *value* variable holds its value like you might expect. A *reference* variable points to an object in memory.
 
-- Re-assigning a value type actually changes its value. 
+- Re-assigning a value type actually changes its value.
 - Re-assigning a reference type makes it point to a different object in memory.
 - Comparison of reference types compares the memory location, not value.
 
 A couple of examples to illustrate:
- 
+
 ```javascript
 //Value types
 var x = 1;
@@ -372,10 +330,10 @@ students.indexOf({name:'julian'}); //-1
 
 ## Exercise & Homework
 
-Create an object that models the data of your favorite email application. 
+Create an object that models the data of your favorite email application.
 
 - Open the email application and take a look at the interface.
-- What information do you see? Make a short list (e.g. emails, my name, mailbox list, an email preview...) 
+- What information do you see? Make a short list (e.g. emails, my name, mailbox list, an email preview...)
 - Make a detailed outline of the data hierarchy. E.g -
 	- Gmail
 		- mailboxes
@@ -387,7 +345,7 @@ Create an object that models the data of your favorite email application.
 			-  Eric
 			-  Katy
 		- Emails
- 		
+
  		...
 - For each bullet in your outline, decide if it is a primative, array, or object.
 - Use this information to create an object literal that models the application's data. E.g. -
@@ -404,7 +362,7 @@ var appData = {
 		{name: 'Shane', lastMessage: "I wont be in class today"},
 		{name: 'Katy', lastMessage: "You're such a nerd"}
 	]
-	
+
 	//...
 }
 ```
@@ -429,6 +387,3 @@ Javascript types
 
 JSON tutorial
 [http://www.w3schools.com/json/default.asp](http://www.w3schools.com/json/default.asp)
-
-
-

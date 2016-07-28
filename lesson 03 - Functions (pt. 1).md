@@ -86,17 +86,17 @@ add(1,2,3,4,5,6,7,8);
 
 ## Exercise 1 (function basics)
 
-Calculating gratutity is a repetitive task, so let's create a couple of functions that do the work for us.
+Calculating gratuity is a repetitive task, so let's create a couple of functions that do the work for us.
 
 - create a variable titled `billAmount` and store a random number (ie: 100)
 - create a function titled `gratuity()`
-	- gratutity should:
+	- gratuity should:
 		- multiply the value of billAmount by 20% <br> *hint: use 0.2*
 		- return the value
 - create a function titled `totalWithGrat()`
 	-  totalWithGrat should:
 		- take in the amount as an argument
-		- call the gratutity function
+		- call the gratuity function
 		- add that to the original bill amount
 		- return the total bill + gratuity
 - log the total (with gratuity) to the console
@@ -108,22 +108,6 @@ Calculating gratutity is a repetitive task, so let's create a couple of function
 
 - Find a way to fix the decimal point to only 2 places, ie: 100.00 <br> *(hint: the answer is in the sentence above)*
 
-### Exercise 1 Answer:
-
-```javascript
-
-var billAmount = 100.58;
-
-function gratutity(){
-    return billAmount * 0.2;
-  }
-
-function totalWithGrat(amount){
-  return gratuity() + amount;
-}
-
-console.log("your total, including gratutity is: $" +  totalWithGrat(billAmount).toFixed(2));
-```
 
 ## Functions as Objects
 
@@ -257,7 +241,7 @@ getGreeting('Shane'); // 'Hello Shane'
 console.log(greeting) //undefined
 ```
 
-Blocks DO NOT have their own scope
+<!-- Blocks DO NOT have their own scope
 
 ```javascript
 for(var i = 0; i < 10; i++) {
@@ -265,7 +249,7 @@ for(var i = 0; i < 10; i++) {
 }
 
 console.log(i,x); //9,9
-```
+``` -->
 
 Scope lets you create private variables in a JS program, but be careful, variables defined without the 'var' keyword are global.
 
