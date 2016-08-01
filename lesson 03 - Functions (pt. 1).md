@@ -340,7 +340,7 @@ console.log(landscape());
 ```
 
 - `flat` and `mountain` are functions only available within `landscape`
-- The `result` variable is available inside `flat` and `mountain` because
+- The `result` variable is available inside `flat` and `mountain` because `result` is defined at the top of `landscape`.
 
 ### Variable name conflicts
 Sometimes parent scopes have variables with the same name.
